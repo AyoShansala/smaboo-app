@@ -5,12 +5,13 @@ class StateWidgets extends StatelessWidget {
   String? statusTxt;
   String? titleTxt;
   String? numberTxt;
-
+  String? arrow;
   StateWidgets({
     super.key,
     this.statusTxt,
     this.titleTxt,
     this.numberTxt,
+    this.arrow,
   });
 
   @override
@@ -71,10 +72,7 @@ class StateWidgets extends StatelessWidget {
                           fontSize: 20.0,
                         ),
                       ),
-                      Icon(
-                        Icons.arrow_upward,
-                        color: Colors.green,
-                      ),
+                      Image.asset("icons/$arrow")
                     ],
                   ),
                 ),

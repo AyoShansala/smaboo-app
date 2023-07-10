@@ -7,10 +7,10 @@ class BookingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 12),
+      padding: const EdgeInsets.only(bottom: 12),
       child: Container(
         width: 352.w,
-        height: 170.h,
+        height: 152.h,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(
             Radius.circular(20.r),
@@ -48,11 +48,11 @@ class BookingWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               children: [
                                 TextSpan(
-                                  style: const TextStyle(
-                                    color: const Color(0xff000000),
+                                  style: TextStyle(
+                                    color: Color(0xff000000),
                                     fontWeight: FontWeight.w500,
                                     fontFamily: "Poppins",
                                     fontStyle: FontStyle.normal,
@@ -61,8 +61,8 @@ class BookingWidget extends StatelessWidget {
                                   text: "9:30",
                                 ),
                                 TextSpan(
-                                  style: const TextStyle(
-                                      color: const Color(0xff000000),
+                                  style: TextStyle(
+                                      color: Color(0xff000000),
                                       fontWeight: FontWeight.w500,
                                       fontFamily: "Poppins",
                                       fontStyle: FontStyle.normal,
@@ -73,11 +73,11 @@ class BookingWidget extends StatelessWidget {
                             ),
                           ),
                           RichText(
-                            text: TextSpan(
+                            text: const TextSpan(
                               children: [
                                 TextSpan(
-                                  style: const TextStyle(
-                                    color: const Color(0xff000000),
+                                  style: TextStyle(
+                                    color: Color(0xff000000),
                                     fontWeight: FontWeight.w500,
                                     fontFamily: "Poppins",
                                     fontStyle: FontStyle.normal,
@@ -86,12 +86,13 @@ class BookingWidget extends StatelessWidget {
                                   text: "10:30",
                                 ),
                                 TextSpan(
-                                  style: const TextStyle(
-                                      color: const Color(0xff000000),
-                                      fontWeight: FontWeight.w500,
-                                      fontFamily: "Poppins",
-                                      fontStyle: FontStyle.normal,
-                                      fontSize: 10.0),
+                                  style: TextStyle(
+                                    color: Color(0xff000000),
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: "Poppins",
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 10.0,
+                                  ),
                                   text: "PM",
                                 ),
                               ],
@@ -101,10 +102,10 @@ class BookingWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(
+                  const Text(
                     "6790766C",
-                    style: const TextStyle(
-                      color: const Color(0xff000000),
+                    style: TextStyle(
+                      color: Color(0xff000000),
                       fontWeight: FontWeight.w300,
                       fontStyle: FontStyle.normal,
                       fontSize: 13.0,
@@ -112,8 +113,22 @@ class BookingWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Divider(
-                thickness: 0.5,
+              // const Divider(
+              //   thickness: 0.8,
+              //   color: Color(0xffdadada),
+              // ),
+              Padding(
+                padding: EdgeInsets.only(top: 8.h),
+                child: Container(
+                  width: 352,
+                  height: 1,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: const Color(0xffdadada),
+                      width: 0.5,
+                    ),
+                  ),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -145,8 +160,17 @@ class BookingWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              Divider(
-                thickness: 0.5,
+              // const Divider(
+              //   thickness: 0.8,
+              //   color: Color(0xffdadada),
+              // ),
+              Container(
+                width: 352,
+                height: 1,
+                decoration: BoxDecoration(
+                  border:
+                      Border.all(color: const Color(0xffdadada), width: 0.5),
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -182,7 +206,19 @@ class BookingWidget extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text("Details"),
+                      const Text(
+                        "Details",
+                        style: const TextStyle(
+                          color: const Color(0xff000000),
+                          fontWeight: FontWeight.w400,
+                          fontFamily: "Poppins",
+                          fontStyle: FontStyle.normal,
+                          fontSize: 13.0,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 2.w,
+                      ),
                       Image.asset("icons/c_right.png"),
                     ],
                   )
