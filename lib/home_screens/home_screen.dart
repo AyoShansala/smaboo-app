@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smaboo_uis/Components/bottom_nav_bar.dart';
+import 'package:smaboo_uis/home_screens/profile_state_screen.dart';
 import 'package:smaboo_uis/widgets/booking_widget.dart';
 import 'package:smaboo_uis/widgets/state_widget.dart';
 
@@ -87,8 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding: EdgeInsets.only(
-                top: 7,
-                bottom: 17,
+                top: 7.h,
               ),
               child: Container(
                 width: 390.w,
@@ -109,6 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Padding(
                           padding: EdgeInsets.only(
+                            top: 17.h,
                             left: 20.w,
                             right: 20.w,
                           ),
@@ -173,7 +174,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                     fontStyle: FontStyle.normal,
                                   ),
                                 ),
-                                Image.asset("icons/c_right.png")
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (c) => ProfileStateScreen(),
+                                      ),
+                                    );
+                                  },
+                                  child: Image.asset(
+                                    "icons/c_right.png",
+                                  ),
+                                )
                               ],
                             ),
                           ),
@@ -187,7 +200,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           child: SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
-                            
                             child: Row(
                               children: [
                                 StateWidgets(

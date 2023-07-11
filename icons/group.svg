@@ -1,0 +1,8 @@
+<svg width="51" height="16" viewBox="0 0 51 16" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <text font-family="Poppins-Regular, Poppins" font-size="12" fill="#000" transform="translate(1)">
+                    <tspan x="21" y="13">Back</tspan>
+                </text>
+        <path d="M6 13 1 8l5-5" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+</svg>
