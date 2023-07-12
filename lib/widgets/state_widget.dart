@@ -18,7 +18,7 @@ class StateWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(left: 8.w),
+      padding: EdgeInsets.only(left: 8.w),
       child: Container(
         width: 172.w,
         // height: 119.h,
@@ -44,6 +44,7 @@ class StateWidgets extends StatelessWidget {
                 style: TextStyle(
                   color: const Color(0xff000000),
                   fontWeight: FontWeight.w500,
+                  fontFamily: "Poppins",
                   fontStyle: FontStyle.normal,
                   fontSize: 17.sp,
                 ),
@@ -53,6 +54,7 @@ class StateWidgets extends StatelessWidget {
                 style: TextStyle(
                   color: const Color(0xff878787),
                   fontWeight: FontWeight.w300,
+                  fontFamily: "Poppins",
                   fontStyle: FontStyle.normal,
                   fontSize: 14.sp,
                 ),
@@ -69,6 +71,7 @@ class StateWidgets extends StatelessWidget {
                         style: TextStyle(
                           color: const Color(0xff000000),
                           fontWeight: FontWeight.w700,
+                          fontFamily: "Gilroy",
                           fontStyle: FontStyle.normal,
                           fontSize: 32.sp,
                         ),

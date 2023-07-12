@@ -79,7 +79,7 @@ class PieChart2State extends State {
               color: Colors.white,
               shadows: shadows,
             ),
-            badgePositionPercentageOffset: 1.5,
+            badgePositionPercentageOffset: 1.3,
             badgeWidget: ChartBadge(
               color: Color(0xff01d2bd),
               time: "60-120min",
@@ -99,7 +99,7 @@ class PieChart2State extends State {
               color: Colors.white,
               shadows: shadows,
             ),
-            badgePositionPercentageOffset: 1.5,
+            badgePositionPercentageOffset: 1.3,
             badgeWidget: ChartBadge(
               color: Color(0xfffe9929),
               time: "0-15min",
@@ -119,7 +119,7 @@ class PieChart2State extends State {
               color: Colors.white,
               shadows: shadows,
             ),
-            badgePositionPercentageOffset: 1.5,
+            badgePositionPercentageOffset: 1.3,
             badgeWidget: ChartBadge(
               color: Color(0xff000000),
               time: "120-240min",
@@ -140,7 +140,7 @@ class PieChart2State extends State {
               color: Colors.white,
               shadows: shadows,
             ),
-            badgePositionPercentageOffset: 1.5,
+            badgePositionPercentageOffset: 1.3,
             badgeWidget: ChartBadge(
               color: Color(0xfffed629),
               time: "15-30min",

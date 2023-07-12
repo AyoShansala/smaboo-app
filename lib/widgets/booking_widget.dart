@@ -22,9 +22,6 @@ class BookingWidget extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(
             top: 7.h,
-            // left: 7.w,
-
-            // right: 10.w,
           ),
           child: Column(
             children: [
@@ -70,18 +67,19 @@ class BookingWidget extends StatelessWidget {
                                   ),
                                   TextSpan(
                                     style: TextStyle(
-                                        color: Color(0xff000000),
-                                        fontWeight: FontWeight.w500,
-                                        fontFamily: "Poppins",
-                                        fontStyle: FontStyle.normal,
-                                        fontSize: 10.sp),
+                                      color: Color(0xff000000),
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "Poppins",
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 10.sp,
+                                    ),
                                     text: "PM",
                                   ),
                                 ],
                               ),
                             ),
                             RichText(
-                              text: const TextSpan(
+                              text: TextSpan(
                                 children: [
                                   TextSpan(
                                     style: TextStyle(
@@ -89,7 +87,7 @@ class BookingWidget extends StatelessWidget {
                                       fontWeight: FontWeight.w500,
                                       fontFamily: "Poppins",
                                       fontStyle: FontStyle.normal,
-                                      fontSize: 15.0,
+                                      fontSize: 15.sp,
                                     ),
                                     text: "10:30",
                                   ),
@@ -99,7 +97,7 @@ class BookingWidget extends StatelessWidget {
                                       fontWeight: FontWeight.w500,
                                       fontFamily: "Poppins",
                                       fontStyle: FontStyle.normal,
-                                      fontSize: 10.0,
+                                      fontSize: 10.sp,
                                     ),
                                     text: "PM",
                                   ),
@@ -110,13 +108,14 @@ class BookingWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Text(
+                    Text(
                       "6790766C",
                       style: TextStyle(
                         color: Color(0xff000000),
                         fontWeight: FontWeight.w300,
+                        fontFamily: 'Poppins',
                         fontStyle: FontStyle.normal,
-                        fontSize: 13.0,
+                        fontSize: 13.sp,
                       ),
                     ),
                   ],
@@ -192,21 +191,22 @@ class BookingWidget extends StatelessWidget {
                             children: [
                               Text(
                                 "Amy Bridget",
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: const Color(0xff000000),
+                                  fontFamily: "Poppins",
                                   fontWeight: FontWeight.w500,
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 14.0,
+                                  fontSize: 14.sp,
                                 ),
                               ),
                               Text(
                                 "Customer",
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: const Color(0xff878787),
                                   fontWeight: FontWeight.w400,
                                   fontFamily: "Poppins",
                                   fontStyle: FontStyle.normal,
-                                  fontSize: 10.0,
+                                  fontSize: 10.sp,
                                 ),
                               ),
                             ],
@@ -230,7 +230,6 @@ class BookingWidget extends StatelessWidget {
                           Text(
                             "Details",
                             style: kPoppins13400(context),
-                       
                           ),
                           SizedBox(
                             width: 2.w,

@@ -4,10 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomDropdowns extends StatefulWidget {
   String? dropdownImage;
   String? dropdownName;
+  double? padding;
   CustomDropdowns({
     super.key,
     this.dropdownImage,
     this.dropdownName,
+    this.padding,
   });
 
   @override
@@ -32,7 +34,7 @@ class _CustomDropdownState extends State<CustomDropdowns> {
       ),
       child: Padding(
         padding: EdgeInsets.only(
-          left: 12.w,
+          left: widget.padding!,
           right: 10.w,
         ),
         child: Row(
@@ -43,7 +45,7 @@ class _CustomDropdownState extends State<CustomDropdowns> {
                 Image.asset("icons/${widget.dropdownImage!}"),
                 Padding(
                   padding: EdgeInsets.only(
-                    left: 9.w,
+                    left: 8.w,
                   ),
                   child: Text(
                     widget.dropdownName!,
@@ -58,7 +60,11 @@ class _CustomDropdownState extends State<CustomDropdowns> {
                 ),
               ],
             ),
-            Icon(Icons.arrow_drop_down_sharp)
+            SizedBox(
+              width: 20.w,
+              height: 20.w,
+              child: Image.asset("icons/arrowDown.png"),
+            )
           ],
         ),
       ),

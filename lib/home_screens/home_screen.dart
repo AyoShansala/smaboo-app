@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smaboo_uis/Components/bottom_nav_bar.dart';
 import 'package:smaboo_uis/home_screens/profile_state_screen.dart';
+import 'package:smaboo_uis/util/custom_divider.dart';
 import 'package:smaboo_uis/widgets/booking_widget.dart';
 import 'package:smaboo_uis/widgets/state_widget.dart';
 
@@ -41,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     size: 30,
                   ),
                   RichText(
-                    text: const TextSpan(
+                    text: TextSpan(
                       children: [
                         TextSpan(
                           style: TextStyle(
@@ -49,17 +50,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             fontWeight: FontWeight.w600,
                             fontFamily: "Poppins",
                             fontStyle: FontStyle.normal,
-                            fontSize: 24.0,
+                            fontSize: 24.sp,
                           ),
                           text: "smaboo ",
                         ),
                         TextSpan(
                           style: TextStyle(
                             color: Color(0xff000000),
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w600,
                             fontFamily: "Poppins",
                             fontStyle: FontStyle.normal,
-                            fontSize: 17.0,
+                            fontSize: 17.sp,
                           ),
                           text: "business",
                         ),
@@ -86,21 +87,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(
-                top: 7.h,
-              ),
-              child: Container(
-                width: 390.w,
-                height: 1.h,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: const Color(0xffc7c7c7),
-                    width: 0.5,
-                  ),
-                ),
-              ),
-            ),
+
+            ///customDivider
+            CustomDivider(thickness: 0.4.h),
             Expanded(
               child: Stack(
                 children: [
@@ -137,10 +126,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  const Text(
+                                  Text(
                                     "Search here",
                                     style: TextStyle(
-                                      fontSize: 18,
+                                      color: const Color(0xff000000),
+                                      fontSize: 18.sp,
+                                      fontFamily: "Poppins",
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
                                     ),
@@ -165,11 +156,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                const Text(
+                                Text(
                                   "Stats",
                                   style: TextStyle(
                                     color: Color(0xff000000),
-                                    fontSize: 22,
+                                    fontSize: 22.sp,
+                                    fontFamily: 'Gilroy',
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                   ),
@@ -224,15 +216,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                         ),
-                        Container(
-                          width: 390.w,
-                          height: 1.h,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: const Color(0xffc7c7c7),
-                              width: 0.5,
-                            ),
-                          ),
+
+                        ///customDivider
+                        CustomDivider(
+                          thickness: 0.6.h,
                         ),
                         Padding(
                           padding: EdgeInsets.only(
@@ -246,12 +233,13 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               Row(
                                 children: [
-                                  const Text(
+                                  Text(
                                     "Todays Bookings",
                                     style: TextStyle(
                                       color: Color(0xff000000),
-                                      fontSize: 22,
+                                      fontSize: 22.sp,
                                       fontWeight: FontWeight.w600,
+                                      fontFamily: 'Gilroy',
                                       fontStyle: FontStyle.normal,
                                     ),
                                   ),
@@ -267,13 +255,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       color: Color(0xffffffff),
                                     ),
-                                    child: const Center(
+                                    child: Center(
                                       child: Text(
                                         "06",
                                         style: TextStyle(
                                           fontFamily: 'Poppins',
                                           color: Color(0xff000000),
-                                          fontSize: 18,
+                                          fontSize: 18.sp,
                                           fontWeight: FontWeight.w600,
                                           fontStyle: FontStyle.normal,
                                           letterSpacing: 0,
@@ -289,12 +277,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         BookingWidget(),
                         BookingWidget(),
-                        // Column(
-                        //   children: [
-                        //     BookingWidget(),
-                        //     BookingWidget(),
-                        //   ],
-                        // ),
                       ],
                     ),
                   ),
