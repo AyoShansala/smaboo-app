@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smaboo_uis/Components/bottom_nav_bar.dart';
 import 'package:smaboo_uis/home_screens/profile_state_screen.dart';
+import 'package:smaboo_uis/manual_booking_screens/booking_01_screen.dart';
 import 'package:smaboo_uis/util/custom_divider.dart';
 import 'package:smaboo_uis/widgets/booking_widget.dart';
 import 'package:smaboo_uis/widgets/state_widget.dart';
@@ -289,7 +290,14 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: const BottomNavBar(),
       floatingActionButton: FloatingActionButton(
         child: Image.asset("icons/group15.png"),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (c) => ManualBookingScreen(),
+            ),
+          );
+        },
       ),
     );
   }
