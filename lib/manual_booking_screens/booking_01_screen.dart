@@ -326,29 +326,62 @@ class ManualBookingScreen extends StatelessWidget {
                             bottom: 14.h,
                           ),
                           child: WhiteContainer(
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                left: 21.w,
-                                bottom: 32.h,
-                                top: 28.h,
-                                right: 37.w,
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "Number of Customers",
-                                    style: TextStyle(
+                            child: Row(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Padding(
+                                          padding: EdgeInsets.only(left: 21.w),
+                                          child: Text(
+                                            "Number of Customers",
+                                            style: TextStyle(
+                                              color: const Color(0xff2e2e2e),
+                                              fontWeight: FontWeight.w400,
+                                              fontFamily: "Poppins",
+                                              fontStyle: FontStyle.normal,
+                                              fontSize: 15.sp,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        left: 270.w,
+                                      ),
+                                      child: Container(
+                                        width: 1.w,
+                                        height: 81.h,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: const Color(0xffdadada),
+                                            width: 0.4.w,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: 33.w,
+                                  ),
+                                  child: Text(
+                                    "01",
+                                    style: const TextStyle(
                                       color: const Color(0xff2e2e2e),
                                       fontWeight: FontWeight.w400,
                                       fontFamily: "Poppins",
                                       fontStyle: FontStyle.normal,
-                                      fontSize: 15.sp,
+                                      fontSize: 20.0,
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
