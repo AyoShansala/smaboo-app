@@ -1,13 +1,23 @@
+import 'dart:ui';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smaboo_uis/manual_booking_screens/stylist_bottom_sheet.dart';
+
 import 'package:smaboo_uis/util/custom_divider.dart';
+import 'package:smaboo_uis/widgets/style_sheet_card.dart';
 import 'package:smaboo_uis/widgets/white_container.dart';
 
-class ManualBookingScreen extends StatelessWidget {
+class ManualBookingScreen extends StatefulWidget {
   const ManualBookingScreen({super.key});
 
+  @override
+  State<ManualBookingScreen> createState() => _ManualBookingScreenState();
+}
+
+class _ManualBookingScreenState extends State<ManualBookingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,6 +175,8 @@ class ManualBookingScreen extends StatelessWidget {
                             ],
                           ),
                         ),
+
+                        ///Select a Stylist
                         Padding(
                           padding: EdgeInsets.only(
                             bottom: 13.h,
@@ -191,12 +203,16 @@ class ManualBookingScreen extends StatelessWidget {
                                       fontSize: 15.sp,
                                     ),
                                   ),
-                                  Image.asset('icons/arrowDown.png')
+                                  InkWell(
+                                      onTap: () => _show(context),
+                                      child: Image.asset('icons/arrowDown.png'))
                                 ],
                               ),
                             ),
                           ),
                         ),
+
+                        ///Select Services
                         Padding(
                           padding: EdgeInsets.only(
                             bottom: 26.h,
@@ -229,7 +245,9 @@ class ManualBookingScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        CustomDivider(
+
+                        ///custom divider
+                        const CustomDivider(
                           thickness: 0.4,
                         ),
 
@@ -258,6 +276,7 @@ class ManualBookingScreen extends StatelessWidget {
                           ),
                         ),
 
+                        /// contact Number
                         Padding(
                           padding: EdgeInsets.only(
                             bottom: 14.h,
@@ -289,6 +308,8 @@ class ManualBookingScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+
+                        ///Name of customer
                         Padding(
                           padding: EdgeInsets.only(
                             bottom: 14.h,
@@ -321,6 +342,8 @@ class ManualBookingScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+
+                        ///Number of Customers
                         Padding(
                           padding: EdgeInsets.only(
                             bottom: 14.h,
@@ -385,6 +408,8 @@ class ManualBookingScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+
+                        ///Notes and Additional Details
                         Container(
                           width: 362.w,
                           height: 153.h,
@@ -428,6 +453,7 @@ class ManualBookingScreen extends StatelessWidget {
                           ),
                         ),
 
+                        ///add booking button
                         Padding(
                           padding: EdgeInsets.only(
                             top: 41.h,
@@ -467,6 +493,258 @@ class ManualBookingScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  void _show(BuildContext ctx) {
+    showModalBottomSheet(
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(),
+      // constraints: BoxConstraints.expand(
+      //   height: 720.h,
+      //   width: 390.w,
+      // ),
+      context: ctx,
+      useSafeArea: true,
+      builder: (ctx) => Stack(
+        children: [
+          Container(
+            height: 720.h,
+            width: 390.w,
+            decoration: BoxDecoration(
+              color: Color(0xffffffff),
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0x0f000000),
+                  offset: Offset(0, 50),
+                  blurRadius: 100,
+                  spreadRadius: 4,
+                )
+              ],
+            ),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 14.w,
+                    right: 14.w,
+                    top: 22.h,
+                    bottom: 22.h,
+                  ),
+                  child: Row(
+                    children: [
+                      /// yellow circle
+                      Container(
+                        width: 50.w,
+                        height: 50.h,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: const Color(0xfffed629),
+                        ),
+                        child: Center(
+                          child: SvgPicture.asset(
+                              'icons/iconlyLightArrowLeftsvg.svg',
+                              width: 24.w,
+                              height: 24.w,
+                              fit: BoxFit.scaleDown),
+                        ),
+                      ),
+
+                      /// Select Stylist
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 72.0.w,
+                        ),
+                        child: Text(
+                          "Select Stylist",
+                          style: const TextStyle(
+                            color: const Color(0xff000000),
+                            fontWeight: FontWeight.w600,
+                            fontFamily: "Gilroy",
+                            fontStyle: FontStyle.normal,
+                            fontSize: 20.0,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                CustomDivider(
+                  thickness: 0.4,
+                ),
+                //Search field
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 14.w,
+                    right: 14.w,
+                    top: 13.h,
+                    bottom: 12.h,
+                  ),
+                  child: Container(
+                    width: 362.w,
+                    height: 80.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20.r),
+                      ),
+                      border: Border.all(
+                        color: const Color(0xff979797),
+                        width: 0.25.h,
+                      ),
+                      color: const Color(0xffffffff),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        left: 30.w,
+                        right: 26.w,
+                        top: 19.h,
+                        bottom: 24.h,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Search Stylist",
+                            style: TextStyle(
+                              color: const Color(0xff000000),
+                              fontSize: 16.sp,
+                              fontFamily: "Poppins",
+                              fontWeight: FontWeight.w400,
+                              fontStyle: FontStyle.normal,
+                            ),
+                          ),
+                          Image.asset("icons/search.png")
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+                StyleSheetCard(
+                  prifilePic: 'group7.png',
+                  titleText: 'Any Stylist',
+                  subText: 'Pick any availble stylist',
+                  titleColor: Color(0xff000000),
+                ),
+                StyleSheetCard(
+                  prifilePic: 'ovalCopy2.png',
+                  titleText: 'Amanda Silva',
+                  subText: 'Head Hairstylist',
+                  titleColor: Color(0xff000000),
+                ),
+                StyleSheetCard(
+                  prifilePic: 'ovalCopy.png',
+                  titleText: 'Amy Hawkinson',
+                  subText: 'Head Hairstylist',
+                  titleColor: Color(0xff000000),
+                ),
+                StyleSheetCard(
+                  prifilePic: 'ovalCopy4.png',
+                  titleText: 'Britney Jude',
+                  subText: 'Manager',
+                  titleColor: Color(0xff000000),
+                ),
+
+                SizedBox(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                          left: 21.0.w,
+                          right: 14.0.w,
+                          top: 20.0.h,
+                        ),
+                        child: Row(
+                          children: [
+                            /// Oval Copy 3
+                            Container(
+                              width: 55.w,
+                              height: 55.h,
+                              decoration: BoxDecoration(
+                                // color: const Color(0xff000000),
+                                shape: BoxShape.circle,
+                              ),
+                              child: Image.asset('icons/ovalCopy5.png'),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(
+                                left: 30.0.w,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  /// Any Stylist
+                                  Text(
+                                    "Chris Jones",
+                                    style: TextStyle(
+                                      color: Color(0xffbdbdbd),
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: "Poppins",
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 18.0.sp,
+                                    ),
+                                  ),
+
+                                  /// Pick any availble st
+                                  Text(
+                                    "Assistant Stylist",
+                                    style: TextStyle(
+                                      color: const Color(0xff878787),
+                                      fontWeight: FontWeight.w300,
+                                      fontFamily: "Poppins",
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 14.0.sp,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            // booked badge
+                            Padding(
+                              padding: EdgeInsets.only(
+                                left: 74.0.w,
+                              ),
+                              child: Container(
+                                width: 90.w,
+                                height: 28.h,
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(14.r)),
+                                  color: const Color(0xfff4f4f4),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    "Booked",
+                                    style: TextStyle(
+                                      color: const Color(0xff878787),
+                                      fontWeight: FontWeight.w300,
+                                      fontFamily: "Poppins",
+                                      fontStyle: FontStyle.normal,
+                                      fontSize: 14.0.sp,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: 12.0.h,
+                        ),
+                        child: CustomDivider(
+                          thickness: 0.4.w,
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
